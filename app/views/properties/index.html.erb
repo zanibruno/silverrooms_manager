@@ -1,1 +1,20 @@
-<h1>I am property index</h1>
+<%@properties.each do |pp| %>
+<ul>
+  <li>
+    <%= pp.address %>
+      <ul>
+        <li>
+          Single Rooms: <%=pp.single_rooms %>
+          </li>
+          <li>
+              Double Rooms : <%=pp.double_rooms %>
+            </li>
+            <li>
+                Bathrooms: <%=pp.bathrooms %>
+              </li>
+      </ul>
+  </li>
+
+</ul>
+<% end %>
+<%=link_to "Create Property", new_property_path %>

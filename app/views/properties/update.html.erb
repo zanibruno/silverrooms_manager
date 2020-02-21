@@ -1,4 +1,3 @@
-
 <%=form_for @property do |f|%>
     <%=f.label "Property Address" %>
     <%=f.text_field :address  %></br>
@@ -8,7 +7,7 @@
     <%=f.number_field :double_rooms %></br>
     <%=f.label "Bathrooms" %>
     <%=f.number_field :bathrooms%></br>
-    <%=f.select :landlord_id,  %>
+    <%=f.select :landlord_id, @property.landlord_id %>
     <%=f.submit "Create Property" %></br>
 
 

@@ -26,11 +26,14 @@ ActiveRecord::Schema.define(version: 2020_02_15_132400) do
     t.integer "double_rooms", null: false
     t.integer "bathrooms", null: false
     t.integer "tenant_id"
+    t.integer "landlord_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,8 +47,10 @@ ActiveRecord::Schema.define(version: 2020_02_15_132400) do
     t.date "start_date", null: false
     t.date "end_date", null: false
     t.integer "rating_id"
+    t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["property_id"], name: "index_tenants_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|

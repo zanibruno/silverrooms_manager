@@ -1,1 +1,4 @@
-<h1>I am property_path </h1>
+<h1>I am show_path</h1>
+<%@properties.each do |p| %>
+<p><%= p.address  %> - <%= p.single_rooms%> - <%= p.double_rooms %> - <%= p.bathrooms %></p>
+<% end %>

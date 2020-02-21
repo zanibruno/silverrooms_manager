@@ -6,6 +6,7 @@ class CreateProperties < ActiveRecord::Migration[6.0]
       t.integer :double_rooms , null: false
       t.integer :bathrooms , null: false
       t.integer :tenant_id
+      t.integer :landlord_id
 
       t.timestamps
     end

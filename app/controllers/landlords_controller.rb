@@ -31,6 +31,10 @@ class LandlordsController < ApplicationController
     redirect_to landlord_path(@landlord)
   end
 
+  def set_properties
+    @properties = Landlord.find_by(property: [:property_id])
+  end
+
   private
 
   def landlord_params
@@ -41,8 +45,6 @@ class LandlordsController < ApplicationController
     @landlord = Landlord.find_by(id: params[:id])
   end
 
-  def set_properties
-    @properties = Landlord.find_by(property: [:property_id])
-  end
+
 
 end

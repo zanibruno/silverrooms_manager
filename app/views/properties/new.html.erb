@@ -8,7 +8,7 @@
     <%=f.number_field :double_rooms %></br>
     <%=f.label "Bathrooms" %>
     <%=f.number_field :bathrooms%></br>
-    <%=f.select :landlord_id,  %>
+    <%=f.collection_select(:landlord_id, Landlord.all, :id, :name)  %>
     <%=f.submit "Create Property" %></br>
 
 

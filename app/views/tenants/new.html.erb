@@ -10,6 +10,8 @@
 <%=f.text_field :sos_name %></br>
 <%=f.label "Emergy Contact Number" %>
 <%=f.text_field :sos_number %></br>
+<%=f.label "Property" %>
+<%=f.collection_select(:property_id, Property.all, :id, :address)%></br>
 <%=f.label "Start Date" %>
 <%=f.date_field :start_date %></br>
 <%=f.label "End Date" %>

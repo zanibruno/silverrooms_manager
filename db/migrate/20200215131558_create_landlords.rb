@@ -3,7 +3,7 @@ class CreateLandlords < ActiveRecord::Migration[6.0]
     create_table :landlords do |t|
       t.string :name, default: "Landlord Name"
       t.string :phone_number, default: "Phone Number"
-      t.integer :property_id
+      
 
       t.timestamps
     end

@@ -17,6 +17,10 @@ class PropertiesController < ApplicationController
         end
     end
 
+    def show
+      @property = Property.find_by(id: params[:id])
+    end
+
     def update
       @property.update(property_params)
     end
@@ -29,6 +33,6 @@ class PropertiesController < ApplicationController
     private
 
     def property_params
-      params.require(:property).permit(:address, :single_rooms, :double_rooms, :bathrooms)
+      params.require(:property).permit(:address, :single_rooms, :double_rooms, :bathrooms, :landlord_id)
     end
 end

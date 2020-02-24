@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_132400) do
   create_table "landlords", force: :cascade do |t|
     t.string "name", default: "Landlord Name"
     t.string "phone_number", default: "Phone Number"
-    t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_132400) do
   create_table "ratings", force: :cascade do |t|
     t.integer "rating"
     t.string "comment"
+    t.integer "property_id"
+    t.integer "tenant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -46,11 +47,9 @@ ActiveRecord::Schema.define(version: 2020_02_15_132400) do
     t.string "sos_number", default: "SOS Contact Number"
     t.date "start_date", null: false
     t.date "end_date", null: false
-    t.integer "rating_id"
     t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["property_id"], name: "index_tenants_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|

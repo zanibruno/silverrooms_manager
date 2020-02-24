@@ -1,7 +1,9 @@
+<h1>I am tenants index</h1>
 <%@tenants.each do |tt| %>
 <ul>
   <li>
-      <%= tt.name %> - <%= tt.property.address %>
+      <%=link_to "#{tt.name}", tenant_path(tt) %>
     </li>
 </ul>
 <%end%>
+<%=link_to "Create Tenant", new_tenant_path %>

@@ -1,0 +1,11 @@
+<%=form_for @rating do |f| %>
+<%=f.label "Tenant" %>
+<%=f.collection_select(:tenant_id, Tenant.all, :id, :name)%>
+<%=f.label "Property" %>
+<%=f.collection_select(:property_id, Property.all , :id, :address)  %>
+<%=f.label "Rating" %>
+<%=f.number_field :rating %>
+<%=f.label "Comment" %>
+<%=f.text_field :comment %>
+<%=f.submit "Create Rating" %>
+<% end %>

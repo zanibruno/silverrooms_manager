@@ -1,2 +1,4 @@
-<h1> I am show_path</h1>
-<%= @property.all %>
+<h1>Landlord Details</h1>
+<h3>Name: <%=@landlord.name %></h3>
+<h3>Phone Number: <%=@landlord.phone_number %></h3>
+<h3>Properties Owned: <%@landlord.properties.each do |p| %><%=p.address %></br><% end %></h3>

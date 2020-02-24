@@ -8,8 +8,9 @@ class CreateTenants < ActiveRecord::Migration[6.0]
       t.string :sos_number, default: "SOS Contact Number"
       t.date :start_date, null: false
       t.date :end_date, null: false
-      t.integer :rating_id
-      t.belongs_to :property
+      t.integer :property_id
+
+
 
 
       t.timestamps

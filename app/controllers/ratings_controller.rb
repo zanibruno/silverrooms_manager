@@ -1,12 +1,22 @@
 class RatingsController < ApplicationController
 
   def index
+    if tenant = Tenant.find_by(id: params[:tenant_id])
+      @ratings = tenant.ratings
+    else
     @ratings = Rating.all
+  end
   end
 
   def new
-    @rating = Rating.new
+    if tenant = Tenant.find_by(id: params[:tenant_id])
+      @rating = Rating.new(tenant_id: tenant.id)
+    else
+      redirect_to tenants_path
+    end
   end
+
+
 
   def create
     @rating = Rating.new(rating_params)
@@ -19,6 +29,10 @@ class RatingsController < ApplicationController
 
   def show
     @rating = Rating.find_by(id: params[:id])
+  end
+
+  def rated
+    @rated = Rating.rated
   end
 
   private

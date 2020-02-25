@@ -1,7 +1,8 @@
+<h1>All Landlords</h1>
 <% @landlords.each do |owner| %>
 <ul>
   <li>
-    <%= link_to "#{owner.name}", landlord_path(owner) %> 
+    <%= link_to "#{owner.name}", landlord_path(owner) %>
   </li>
 
   </ul>

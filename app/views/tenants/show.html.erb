@@ -5,3 +5,5 @@
 <h2>Email: <%=@tenant.email%> </h2>
 <h2>SOS Name: <%=@tenant.sos_name %></h2>
 <h2>Property: <%=@tenant.property.address %></h2>
+<%= link_to "See all ratings", tenant_ratings_path(@tenant) %>
+<%=link_to "Create a Rating for this tenant", new_tenant_rating_path(@tenant) %>

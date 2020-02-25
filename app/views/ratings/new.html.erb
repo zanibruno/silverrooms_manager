@@ -1,8 +1,10 @@
+<h1>You are creating a new rating for <%=@rating.tenant.name %> at <%=@rating.tenant.property.address %></h1>
+
 <%=form_for @rating do |f| %>
 <%=f.label "Tenant" %>
-<%=f.collection_select(:tenant_id, Tenant.all, :id, :name)%>
+<%=f.hidden_field :tenant_id%>
 <%=f.label "Property" %>
-<%=f.collection_select(:property_id, Property.all , :id, :address)  %>
+<%=f.hidden_field :property_id, value: @rating.tenant.property.id  %>
 <%=f.label "Rating" %>
 <%=f.number_field :rating %>
 <%=f.label "Comment" %>

@@ -15,7 +15,7 @@ class LandlordsController < ApplicationController
     else
       render :new
     end
-  end
+end
 
   def show
     @landlord = Landlord.find_by(id: params[:id])

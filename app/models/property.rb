@@ -5,7 +5,7 @@ class Property < ApplicationRecord
     has_many :past_tenants, through: :ratings, source: :tenants
 
     validates :address, presence: true, uniqueness: true
-    validates :single_rooms, presence :true
+    validates :single_rooms, presence: true
     validates :double_rooms, presence: true
     validates :bathrooms, presence: true
 

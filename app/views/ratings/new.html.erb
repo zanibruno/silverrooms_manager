@@ -1,5 +1,13 @@
 <h1>You are creating a new rating for <%=@rating.tenant.name %> at <%=@rating.tenant.property.address %></h1>
-
+<% if @rating.errors.any? %>
+<div id="error_explanation">
+    <ul>
+        <% @rating.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
 <%=form_for @rating do |f| %>
 <%=f.label "Tenant" %>
 <%=f.hidden_field :tenant_id%>

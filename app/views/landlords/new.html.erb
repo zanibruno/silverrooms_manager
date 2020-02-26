@@ -1,7 +1,18 @@
+<% if @landlord.errors.any? %>
+<div id="error_explanation">
+
+      <ul>
+      <%@landlord.errors.full_messages.each do |msg| %>
+      <li> <%= msg %></li>
+      <% end %>
+      </ul>
+      </div>
+      <% end %>
 <%= form_for @landlord do |f| %>
 <%=f.label "Name" %>
-<%=f.text_field :name %>
+<%=f.text_field :name %></br>
 <%=f.label "Phone Number" %>
-<%=f.text_field :phone_number %>
+<%=f.text_field :phone_number %></br>
 <%=f.submit "Create Landlord" %>
 <% end %>
+

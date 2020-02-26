@@ -7,7 +7,7 @@ class Rating < ApplicationRecord
     validates :tenant_id, presence: true
     validates :property_id, presence: true
 
-    scope :rated, -> { where(rating: true) }
+    scope :good_rating, -> { where('rating > ?', 3)}
 
 
 end

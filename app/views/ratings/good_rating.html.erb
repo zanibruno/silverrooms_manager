@@ -1,0 +1,7 @@
+<h1>Showing Ratings bigger than 3</h1>
+<% @good_ratings.each do |goodrating| %></br>
+<%= goodrating.tenant.name %></br>
+<%= goodrating.property.address %></br>
+<%= goodrating.rating %></br>
+<%= goodrating.comment %></br>
+<% end %>

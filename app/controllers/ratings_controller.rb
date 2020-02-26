@@ -31,8 +31,8 @@ class RatingsController < ApplicationController
     @rating = Rating.find_by(id: params[:id])
   end
 
-  def rated
-    @rated = Rating.rated
+  def good_rating
+    @good_ratings = Rating.good_rating 
   end
 
   private

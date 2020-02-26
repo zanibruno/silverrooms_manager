@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+  get '/ratings/good_rating', to: 'ratings#good_rating'
+
   resources :ratings, except: [:new]
   resources :landlords
   resources :tenants do
@@ -9,9 +12,8 @@ Rails.application.routes.draw do
   resources :properties
   root to: 'application#dashboard'
 
-  get '/ratings/rated', to: 'ratings#rated'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: 'registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   devise_scope :users do
     get 'login', to: 'devise/sessions#new'
   end

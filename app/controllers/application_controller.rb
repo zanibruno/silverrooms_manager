@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
 
 
   def welcome
-    redirect_to root_path if user_signed_in?
+    if user_logged_in?
+    redirect_to root_path
+  else
+    redirect_to new_user_registration_path
+    end
   end
 
   def dashboard

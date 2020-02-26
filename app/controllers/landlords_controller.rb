@@ -1,4 +1,6 @@
 class LandlordsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_landlord
 
   def index
     @landlords = Landlord.all
@@ -13,20 +15,20 @@ class LandlordsController < ApplicationController
     if @landlord.save
       redirect_to landlords_path
     else
-      render :new
+      render :new, notice: "Please complete all fields with valid format."
     end
 end
 
   def show
-    @landlord = Landlord.find_by(id: params[:id])
+    # @landlord = Landlord.find_by(id: params[:id])
   end
 
   def edit
-    @landlord = Landlord.find_by(id: params[:id])
+    # @landlord = Landlord.find_by(id: params[:id])
   end
 
   def update
-    @landlord = Landlord.find_by(id: params[:id])
+    # @landlord = Landlord.find_by(id: params[:id])
     @landlord.update(landlord_params)
     redirect_to landlord_path(@landlord)
   end
@@ -44,6 +46,7 @@ end
   def set_landlord
     @landlord = Landlord.find_by(id: params[:id])
   end
+ 
 
 
 

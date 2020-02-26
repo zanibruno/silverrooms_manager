@@ -1,7 +1,8 @@
 class RegistrationsController < ApplicationController
 
   def new
-  end 
+    redirect_to root_path
+  end
 
   private
 

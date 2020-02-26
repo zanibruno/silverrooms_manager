@@ -1,4 +1,14 @@
 <h1>I am new_tenant_path </h1>
+<% if @tenant.errors.any? %>
+<div id="error_explanation">
+    <ul>
+        <% @tenant.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
 <%=form_for @tenant do |f| %>
 <%=f.label "Tenant Name " %>
 <%=f.text_field :name %></br>

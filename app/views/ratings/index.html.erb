@@ -1,6 +1,6 @@
 <h1>All Ratings</h1>
 <%@ratings.each do |r| %>
-<%=link_to "#{r.property.address}", rating_path(r) %></br>
+<%=link_to "#{r.property.address} - #{r.tenant.name}", rating_path(r) %></br>
 <% end %>
 <%=link_to "Good Ratings", ratings_good_rating_path %>
 <%# <%=link_to "Create Rating", new_rating_path %>

@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+
   get '/ratings/good_rating', to: 'ratings#good_rating'
 
   resources :ratings, except: [:new]
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   root to: 'application#dashboard'
 
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
   devise_scope :users do
     get 'login', to: 'devise/sessions#new'
   end

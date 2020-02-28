@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'omniauth-github'
 gem 'omniauth'
 gem 'figaro'
+gem 'omniauth-facebook'
 
 
 # Use Active Storage variant
